@@ -1,0 +1,18 @@
+INFO:__main__:load inverted index from filepath inverted.index
+INFO:__main__:read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+DEBUG:__main__:query inverted index with request ['two', 'words']
+INFO:inverted_index:load inverted index from filepath inverted.index
+INFO:inverted_index:read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+DEBUG:inverted_index:query inverted index with request ['two', 'words']
+INFO:inverted_index:load inverted index from filepath inverted.index
+INFO:inverted_index:read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+DEBUG:inverted_index:query inverted index with request ['two', 'words']
+2020-12-16 03:53:18 INFO load inverted index from filepath inverted.index
+2020-12-16 03:53:32 INFO read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+2020-12-16 03:53:32 DEBUG query inverted index with request ['two', 'words']
+%(asctime)s %(levelname)s %(message)s INFO load inverted index from filepath inverted.index
+%(asctime)s %(levelname)s %(message)s INFO read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+%(asctime)s %(levelname)s %(message)s DEBUG query inverted index with request ['two', 'words']
+2020-12-16 04:05:53 INFO load inverted index from filepath inverted.index
+2020-12-16 04:06:07 INFO read queries from <_io.TextIOWrapper name='quries_cp1251.txt' mode='r' encoding='cp1251'>
+2020-12-16 04:06:07 DEBUG query inverted index with request ['two', 'words']

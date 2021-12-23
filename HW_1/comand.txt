@@ -1,0 +1,65 @@
+task_Mullagaliev_Erik_inverted_index.py
+test_Mullagaliev_Erik_inverted_index.py
+pylint task_Mullagaliev_Erik_inverted_index.py
+
+pytest --cov=inverted_index --cov-branch -v test_inverted_index.py
+pytest -v --pdb --maxfail=1
+iconv -c -f utf-8 -t cp1251 -o queries_cp1251.txt queries_utf8.txt
+
+./inverted_index.py build --dataset resources/wikipedia.sample --output inverted.index
+python3 task_Mullagaliev_Erik_inverted_index.py build --dataset resources/wikipedia.sample --output inverted.index
+
+
+./inverted_index.py query --index inverted.index --query-file-utf8 quries_utf8.txt
+python3 task_Mullagaliev_Erik_inverted_index.py query --index inverted.index --query-file-utf8 quries_utf8.txt
+
+cat quries_utf8.txt | ./inverted_index.py query --index inverted.index --query-file-utf8 -
+cat quries_utf8.txt | python3 task_Mullagaliev_Erik_inverted_index.py query --index inverted.index --query-file-utf8 -
+
+
+./inverted_index.py query --index inverted.index --query-file-cp1251 quries_cp1251.txt
+python3 task_Mullagaliev_Erik_inverted_index.py query --index inverted.index --query-file-cp1251 quries_cp1251.txt
+
+cat quries_cp1251.txt | ./inverted_index.py query --index inverted.index --query-file-cp1251 -
+cat quries_cp1251.txt | python3 inverted_index.py query --index inverted.index --query-file-cp1251 -
+
+
+./inverted_index.py query --index inverted.index --query first query [--query the second query]
+python3 task_Mullagaliev_Erik_inverted_index.py query --index inverted.index --query first query [--query the second query]
+
+
+
+    parser = ArgumentParser(
+        prog="inverted-index",
+        description="tool to build, dump, load and query inverted index",
+        formatter_class=ArgumentDefaultsHelpFormatter,
+    )
+    setup_parser(parser)
+    arguments = parser.parse_args()
+    #print(arguments)
+
+    arguments.callback(arguments)
+
+    #document_ids = process_arguments(arguments.dataset, arguments.query)
+    #print (document_ids)
+    #document_ids = inverted_index.query(["two", "words"])
+    #document_ids = inverted_index.query(["some", "against", "killing", "then", "and"])
+    #print(f"the answer is {document_ids}")
+    #print(len(document_ids))
+
+    #inverted_index.dump("inverted.index", JsonStoragePolicy())
+    #inverted_index = InvertedIndex.load("inverted.index", JsonStoragePolicy())
+    #inverted_index.dump("inverted.index", PklStoragePolicy())
+    #inverted_index = InvertedIndex.load("inverted.index", PklStoragePolicy())
+    #inverted_index.dump("inverted.index", ZlibStoragePolicy())
+    #inverted_index = InvertedIndex.load("inverted.index", ZlibStoragePolicy())
+    ##inverted_index.dump("inverted.index", StruckStoragePolicy())
+    ##inverted_index = InvertedIndex.load("inverted.index", StruckStoragePolicy())
+    ##document_ids = inverted_index.query(["some", "against", "killing", "then", "and"])
+    ##print(f"the answer is {document_ids}")
+    ##print(len(document_ids))
+
+
+
+            #union = list(union)
+        #union = [int(i) for i in union]
